@@ -1,0 +1,44 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 1
+Design : rrc_filter
+Version: V-2023.12-SP5-4
+Date   : Wed Jul 16 16:36:13 2025
+****************************************
+
+Operating Conditions: TT_0P80V_0P00V_0P00V_0P00V_25C   Library: GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C
+Wire Load Model Mode: enclosed
+
+  Startpoint: shift_din_reg_28__0_
+              (rising edge-triggered flip-flop clocked by cnt_clk)
+  Endpoint: shift_din_reg_29__0_
+            (rising edge-triggered flip-flop clocked by cnt_clk)
+  Path Group: cnt_clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock cnt_clk (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  shift_din_reg_28__0_/CLK (SC7P5T_DFFRQX4_S_CSC20L)      0.00       0.00 r
+  shift_din_reg_28__0_/Q (SC7P5T_DFFRQX4_S_CSC20L)       48.48      48.48 f
+  shift_din_reg_29__0_/D (SC7P5T_DFFRQX1_AS_CSC20L)       0.00      48.48 f
+  data arrival time                                                 48.48
+
+  clock cnt_clk (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                      50.00      50.00
+  shift_din_reg_29__0_/CLK (SC7P5T_DFFRQX1_AS_CSC20L)     0.00      50.00 r
+  library hold time                                      12.95      62.95
+  data required time                                                62.95
+  --------------------------------------------------------------------------
+  data required time                                                62.95
+  data arrival time                                                -48.48
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                 -14.47
+
+
+1

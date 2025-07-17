@@ -1,0 +1,520 @@
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid this.
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+              Version V-2023.12-SP5-4 for linux64 - Jan 29, 2025 
+
+                    Copyright (c) 1988 - 2025 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+Initializing...
+Current time:       Wed Jul 16 16:34:48 2025
+Hostname:           kccisynop2
+CPU Model:          INTEL(R) XEON(R) GOLD 6526Y
+CPU Details:        Cores = 1 : Sockets = 1 : Cache Size = 38400 KB : Freq = 3.47 GHz
+OS:                 Linux 5.14.0-427.13.1.el9_4.x86_64
+RAM:                1007 GB (Free 961 GB)
+Swap:                 3 GB (Free   3 GB)
+Work Filesystem:    /home mounted to /dev/mapper/rhel-home
+Tmp Filesystem:     / mounted to /dev/mapper/rhel-root
+Work Disk:          2690 GB (Free 2522 GB)
+Tmp Disk:           2665 GB (Free 2190 GB)
+
+CPU Load: 457%, Ram Free: 961 GB, Swap Free: 3 GB, Work Disk Free: 2522 GB, Tmp Disk Free: 2190 GB
+#operation condition : BC / TC / WC
+set min_cond "BC"
+BC
+set max_cond "WC"
+WC
+set used_vt  {"hvt" "svt" "lvt"}
+"hvt" "svt" "lvt"
+set designName "rrc_filter"
+rrc_filter
+set revName     "rrc_filter_0"
+rrc_filter_0
+set outputName "${revName}"
+rrc_filter_0
+set file_script  "rrc_filter.tcl"
+rrc_filter.tcl
+set file_sdc_input "rrc_filter.sdc"
+rrc_filter.sdc
+set file_hdl_list "rrc_filter.list"
+rrc_filter.list
+source scripts/set_var.tcl
+/home/aedu35/asic_edu/project1/output/rrc_filter_0/rrc_filter_0.pwr.v
+set file_script_bak [list $file_script $file_sdc_input]
+rrc_filter.tcl rrc_filter.sdc
+source scripts/file_works.tcl
+define_design_lib WORK -path $dir_out/work
+1
+source scripts/env.tcl
+#source $file_analyze
+source $file_hdl_list
+Running PRESTO HDLC
+Compiling source file ./rrc_filter.sv
+Presto compilation completed successfully.
+Loading db file '/tools/synopsys/syn/V-2023.12-SP5-4/libraries/syn/dw_foundation.sldb'
+1
+#source scr/analyze_list
+DATE_STAMP "start" $file_stamp
+elaborate $designName
+Loading db file '/tools/synopsys/syn/V-2023.12-SP5-4/libraries/syn/gtech.db'
+Loading db file '/tools/synopsys/syn/V-2023.12-SP5-4/libraries/syn/standard.sldb'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Warning:  ./rrc_filter.sv:23: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./rrc_filter.sv:77: signed to unsigned part selection occurs. (VER-318)
+Warning:  ./rrc_filter.sv:87: signed to unsigned part selection occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine rrc_filter line 16 in file
+		'./rrc_filter.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    shift_din_reg    | Flip-flop |  224  |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine rrc_filter line 79 in file
+		'./rrc_filter.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    data_out_reg     | Flip-flop |   7   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (rrc_filter)
+Elaborated 1 design.
+Current design is now 'rrc_filter'.
+1
+source scripts/condition.tcl
+Information: Command 'set_max_leakage_power' is obsolete and is being ignored. (INFO-102)
+0
+source $file_sdc_input
+Current design is 'rrc_filter'.
+Current design is 'rrc_filter'.
+set_svf $file_svf
+1
+set_host_options -max_cores 6 
+1
+#write_sdc $file_sdc_syn.0
+#echo "------------------------------" >> $file_check
+check_design >> ${file_check_design}.pre
+check_timing >> ${file_check_timing}.pre
+compile_ultra -scan -gate_clock -no_autoungroup
+Information: Performing leakage power optimization. (PWR-850)
+CPU Load: 7%, Ram Free: 960 GB, Swap Free: 3 GB, Work Disk Free: 2522 GB, Tmp Disk Free: 2190 GB
+Analyzing: "/pdk/GF22FDX_SC7P5T_116CPP_BASE_CSC20L_FDK_RELV02R80/db/GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C.db"
+Library analysis succeeded.
+Information: Running optimization using a maximum of 6 cores. (OPT-1500)
+Information: Choosing a test methodology will restrict the optimization of sequential cells. (UIO-12)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | V-2023.12-DWBB_202312.5 |     *     |
+| Licensed DW Building Blocks        | V-2023.12-DWBB_202312.5 |     *     |
+============================================================================
+
+====================================================================================================
+| Flow Information                                                                                 |
+----------------------------------------------------------------------------------------------------
+| Flow         | Design Compiler WLM                                                               |
+| Command Line | compile_ultra -no_autoungroup -scan -gate_clock                                   |
+====================================================================================================
+| Design Information                                      | Value                                  |
+====================================================================================================
+| Number of Scenarios                                     | 0                                      |
+| Leaf Cell Count                                         | 282                                    |
+| Number of User Hierarchies                              | 0                                      |
+| Sequential Cell Count                                   | 231                                    |
+| Macro Count                                             | 0                                      |
+| Number of Power Domains                                 | 0                                      |
+| Number of Path Groups                                   | 2                                      |
+| Number of VT Class                                      | 1                                      |
+| Number of Clocks                                        | 1                                      |
+| Number of Dont Touch Cells                              | 6                                      |
+| Number of Dont Touch Nets                               | 0                                      |
+| Number of Size Only Cells                               | 0                                      |
+| Design with UPF Data                                    | false                                  |
+----------------------------------------------------------------------------------------------------
+| Variables                                               | Value                                  |
+----------------------------------------------------------------------------------------------------
+| set_fix_multiple_port_nets                              | -all -buffer_constants                 |
+====================================================================================================
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Information: There are 9 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+  Simplifying Design 'rrc_filter'
+Information: Performing clock-gating with positive edge logic: 'integrated' and negative edge logic: 'integrated'. (PWR-1047)
+
+Loaded alib file './alib-52/GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C.db.alib'
+CPU Load: 8%, Ram Free: 960 GB, Swap Free: 3 GB, Work Disk Free: 2522 GB, Tmp Disk Free: 2190 GB
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'rrc_filter'
+ Implement Synthetic for 'rrc_filter'.
+Information: Added key list 'DesignWare' to design 'rrc_filter'. (DDB-72)
+CPU Load: 8%, Ram Free: 960 GB, Swap Free: 3 GB, Work Disk Free: 2522 GB, Tmp Disk Free: 2190 GB
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: The library cell 'SC7P5T_TIELOX1_CSC20L' in the library 'GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C' is not characterized for internal power. (PWR-536)
+Information: The library cell 'SC7P5T_TIEHIX1_CSC20L' in the library 'GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+Information: Skipping clock gating on design rrc_filter_DP_OP_102J1_122_8068_J1_0, since there are no registers. (PWR-806)
+Information: Performing clock-gating on design rrc_filter. (PWR-730)
+Information: Automatic shift-register identification is enabled for scan. Not all registers will be scan-replaced. (OPT-467)
+
+Threshold voltage group cell usage:
+>> CSC20L 100.00%
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:07    1347.2     75.25     514.8    1159.8                              3.8917
+    0:00:07    1342.9     75.24     517.9    1151.8                              3.8802
+
+Threshold voltage group cell usage:
+>> CSC20L 100.00%
+
+  Beginning Constant Register Removal
+  -----------------------------------
+
+Threshold voltage group cell usage:
+>> CSC20L 100.00%
+
+  Beginning Global Optimizations
+  ------------------------------
+  Numerical Synthesis (Phase 1)
+  Numerical Synthesis (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+
+Threshold voltage group cell usage:
+>> CSC20L 100.00%
+
+  Beginning Isolate Ports
+  -----------------------
+
+Threshold voltage group cell usage:
+>> CSC20L 100.00%
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:00:07     814.5    174.91    1138.7    1285.5                              1.9139
+  Mapping 'rrc_filter_DP_OP_102J1_122_8068_2'
+    0:00:08    1507.2    186.12    1168.3    1394.5                              4.0818
+    0:00:08    1508.4    142.84     942.7    1385.3                              4.0910
+  Mapping 'rrc_filter_DW01_add_1'
+    0:00:08    1509.7    142.13     936.7    1403.3                              4.1109
+    0:00:08    1509.7    142.13     936.7    1403.3                              4.1109
+    0:00:08    1511.7    137.03     895.3    1399.6                              4.1218
+
+Threshold voltage group cell usage:
+>> CSC20L 100.00%
+    0:00:08    1504.6    133.51     883.3    1397.7                              4.1032
+    0:00:08    1503.4    133.51     883.3    1395.3                              4.0995
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+    0:00:08    1486.6    133.51     885.4    1371.5                              4.0570
+    0:00:08    1411.6     99.82     641.0    1249.1                              3.9149
+    0:00:08    1411.6     99.82     641.0    1249.1                              3.9149
+    0:00:08    1411.6     99.82     641.0    1249.1                              3.9149
+    0:00:08    1411.6     99.82     641.0    1249.1                              3.9149
+    0:00:09    1400.8     99.20     634.0    1236.5                              3.8836
+    0:00:09    1400.8     99.20     634.0    1236.5                              3.8836
+    0:00:09    1412.3     81.36     540.8    1280.0                              3.9355
+    0:00:09    1412.3     81.36     540.8    1280.0                              3.9355
+    0:00:09    1407.8     81.07     532.9    1272.8                              3.9333
+    0:00:09    1407.8     81.07     532.9    1272.8                              3.9333
+    0:00:09    1418.7     71.46     482.1    1294.8                              3.9730
+    0:00:09    1418.7     71.46     482.1    1294.8                              3.9730
+    0:00:10    1404.1     64.79     436.7    1306.1                              3.9689
+    0:00:10    1404.1     64.79     436.7    1306.1                              3.9689
+    0:00:10    1403.7     64.07     436.4    1306.1                              3.9683
+    0:00:10    1403.7     64.07     436.4    1306.1                              3.9683
+    0:00:10    1403.9     64.04     435.8    1306.0                              3.9692
+    0:00:10    1403.9     64.04     435.8    1306.0                              3.9692
+    0:00:10    1403.3     63.47     433.4    1306.1                              3.9671
+    0:00:10    1403.3     63.47     433.4    1306.1                              3.9671
+    0:00:10    1403.4     63.54     433.0    1306.2                              3.9667
+    0:00:10    1403.4     63.54     433.0    1306.2                              3.9667
+    0:00:10    1403.4     63.54     433.0    1306.2                              3.9667
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_fanout)
+  ----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:10    1403.4     63.54     433.0    1306.2                              3.9667
+  Global Optimization (Phase 31)
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+    0:00:12    1411.0     64.96     438.3    1200.2 net5781                      4.4023
+    0:00:13    1425.1     67.72     469.4    1171.4 data_out_reg[5]/D            4.5419
+    0:00:14    1410.6     66.04     458.5    1165.4 data_out_reg[3]/D            4.4989
+    0:00:15    1353.9     79.17     545.2    1153.6 data_out_reg[5]/D            4.3486
+    0:00:15    1311.7     88.08     565.2    1143.6 data_out_reg[5]/D            4.2365
+    0:00:15    1311.7     88.08     565.2    1143.6                              4.2365
+    0:00:16    1346.6     61.65     411.3    1242.3                              4.3133
+    0:00:16    1331.9     55.30     372.0    1231.7 data_out_reg[4]/D            4.2782
+    0:00:16    1328.3     54.55     370.0    1228.8                              4.2674
+    0:00:17    1324.3     53.58     364.0    1235.4                              4.2466
+    0:00:17    1324.3     53.58     364.0    1235.4                              4.2466
+    0:00:17    1318.1     53.58     364.0    1232.3                              4.2123
+    0:00:17    1318.1     53.58     364.0    1232.3                              4.2123
+    0:00:17    1318.1     53.58     364.0    1232.3                              4.2123
+    0:00:17    1318.1     53.58     364.0    1232.3                              4.2123
+    0:00:17    1318.7     53.41     366.3    1233.3                              4.2123
+    0:00:17    1318.7     53.41     366.3    1233.3                              4.2123
+    0:00:17    1323.5     52.88     362.8    1244.6                              4.2278
+    0:00:17    1323.5     52.88     362.8    1244.6                              4.2278
+    0:00:18    1337.8     44.27     295.4    1275.0                              4.2800
+    0:00:18    1337.8     44.27     295.4    1275.0                              4.2800
+    0:00:18    1339.7     43.63     291.1    1280.9                              4.2865
+    0:00:18    1339.7     43.63     291.1    1280.9                              4.2865
+    0:00:18    1336.7     40.12     268.1    1291.9                              4.2548
+    0:00:18    1336.7     40.12     268.1    1291.9                              4.2548
+    0:00:18    1336.7     40.12     267.8    1292.3                              4.2561
+    0:00:18    1336.7     40.12     267.8    1292.3                              4.2561
+    0:00:18    1336.9     40.12     267.8    1292.0                              4.2567
+    0:00:18    1336.9     40.12     267.8    1292.0                              4.2567
+    0:00:18    1336.9     40.12     267.8    1292.0                              4.2567
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:18    1336.0     40.12     267.8    1292.0                              4.2566
+    0:00:19    1237.1     40.96     268.0    1252.1                              3.8698
+    0:00:19    1235.6     39.26     261.0    1251.2                              3.8664
+    0:00:19    1235.6     39.26     261.0    1251.2                              3.8664
+    0:00:19    1236.1     39.26     261.0    1250.2                              3.8702
+    0:00:20    1243.0     38.98     261.5    1245.3 net5664                      3.9474
+    0:00:21    1245.2     37.33     251.1    1240.8 data_out_reg[3]/D            3.9932
+    0:00:21    1252.0     33.16     229.2    1255.9 data_out_reg[4]/D            3.9871
+    0:00:22    1264.0     30.34     208.3    1274.8 data_out_reg[6]/D            4.0169
+    0:00:22    1269.3     28.49     197.7    1285.1 data_out_reg[2]/D            4.0364
+    0:00:23    1268.7     27.67     192.2    1290.2 data_out_reg[6]/D            4.0214
+    0:00:23    1245.3     88.28     482.9    1264.0 data_out_reg[6]/D            4.0115
+    0:00:24    1241.9     79.72     504.5    1259.5 data_out_reg[6]/D            4.0144
+    0:00:24    1242.2    101.47     593.3    1251.4                              4.0357
+    0:00:24    1216.8     32.24     217.3    1277.5                              3.8877
+    0:00:24    1216.8     32.24     217.3    1277.5                              3.8877
+    0:00:25    1216.5     32.24     217.2    1277.3                              3.8868
+    0:00:25    1216.5     32.24     217.2    1277.3                              3.8868
+    0:00:25    1216.5     32.24     217.2    1277.3                              3.8868
+    0:00:25    1168.5     32.12     217.0    1265.3                              3.6600
+CPU Load: 8%, Ram Free: 960 GB, Swap Free: 3 GB, Work Disk Free: 2522 GB, Tmp Disk Free: 2190 GB
+Loading db file '/pdk/GF22FDX_SC7P5T_116CPP_BASE_CSC20L_FDK_RELV02R80/db/GF22FDX_SC7P5T_116CPP_BASE_CSC20L_TT_0P80V_0P00V_0P00V_0P00V_25C.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Unable to resolve reference 'SC7P5T_DFFRQX4_S_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_DFFRQX1_AS_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_DFFRQX4_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_DFFRQNX4_AS_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_SDFFRQX4_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_DFFSQNX2_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_SDFFRQX2_A_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_NR3IBX3_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_ND2X4_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_NR2X3_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_ND2X2_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_INVX2_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_NR2X4_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_INVX6_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_XNR2X4_P_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_INVX3_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_INVX1_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_ND2X3_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_FAX4_P_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_XOR2X2_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_AN2X2_A_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_ND3X3_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_BUFX4_P_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_FAX4_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_AO21X2_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_NR2X2_MR_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_AO21IAX2_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_FCGENIX2_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_BUFX4_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_FAX2_A_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_OAI21X3_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_OAI22X2_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_OAI21X2_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_BUFX8_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_INVX8_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_BUFX8_A_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_INVX4_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_AN2X4_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_BUFX6_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_NR2IAX3_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_NR2X8_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_ND2X6_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_AO21X4_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_ND2X8_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_OA22IA1A2X4_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_OAI21X4_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_XNR2X2_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_OAI21X6_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_BUFX2_A_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_OR2X4_A_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_XNR2X1_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_XOR3X2_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_OAI31X3_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_AOI21IAX4_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_AOI21X4_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_OR2X6_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_ND2X1_MR_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_ND2IAX3_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_OAI22X4_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_AOI31X3_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_ND3X4_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_OAI211X3_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_AN2X2_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_OAI21X1_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_OA21X2_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_AN3X2_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_ND2IAX2_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_OR2X4_P_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_CKXOR2X4_P_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_CKAN2ICLKX4_P_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_AO21X4_P_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_XOR3X4_P_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_XNR3X2_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_CKND2X1_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_AOI21X1_MR_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_NR2X6_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_AO22IA1A2X4_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_AO21IAX1_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_OR2X3_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_AOI21X3_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_AN2X4_P_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_CKBUFX2_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_FAX6_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_FCGENIX1_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_OR2X2_A_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_OR2X1_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_AOI21X2_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_HAX2_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_XOR2X1_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_OA21X4_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_NR2X1_MR_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_AO21IAX4_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_ND2IAX1_L_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_AOI21IAX2_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_OA21X4_P_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_ND2IAX4_A_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_BUFX12_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_BUFX3_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_INVX12_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_TIELOX1_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_OA21X1_CSC20L' in 'rrc_filter'. (LINK-5)
+Warning: Unable to resolve reference 'SC7P5T_FAX1_A_CSC20L' in 'rrc_filter'. (LINK-5)
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+CPU Load: 8%, Ram Free: 960 GB, Swap Free: 3 GB, Work Disk Free: 2522 GB, Tmp Disk Free: 2190 GB
+Information: Total number of MV cells in the design.
+----------------------------------------------------------------------------------------------------
+ MV Cells                                           Total Number                                   
+----------------------------------------------------------------------------------------------------
+ Level Shifter:                                     0                                             
+ Enable Level Shifter:                              0                                             
+ Isolation Cell:                                    0                                             
+ Retention Cell:                                    0                                             
+ Retention Clamp Cell:                              0                                             
+ Switch Cell:                                       0                                             
+ Always-On Cell:                                    0                                             
+ Repeater Cell:                                     0                                             
+
+----------------------------------------------------------------------------------------------------
+Unmapped MV Cells 
+----------------------------------------------------------------------------------------------------
+0 Isolation Cells are unmapped 
+0 Retention Clamp Cells are unmapped 
+----------------------------------------------------------------------------------------------------
+1
+DATE_STAMP "  end : synth of TOP" $file_stamp
+source scripts/report.tcl
+Writing ddc file '/home/aedu35/asic_edu/project1/output/rrc_filter_0/rrc_filter_0.ddc'.
+Writing verilog file '/home/aedu35/asic_edu/project1/output/rrc_filter_0/rrc_filter_0.v'.
+DATE_STAMP "end" $file_stamp
+#exit
+dc_shell> exit\[K
+
+Memory usage for this session 740 Mbytes.
+Memory usage for this session including child processes 801 Mbytes.
+CPU usage for this session 106 seconds ( 0.03 hours ).
+Elapsed time for this session 108 seconds ( 0.03 hours ).
+
+Thank you...

@@ -1,0 +1,5 @@
+lappend search_path  ../src
+set net_list "\
+./rrc_filter.sv\
+"
+ analyze -format sverilog -library WORK $net_list

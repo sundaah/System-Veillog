@@ -1,0 +1,86 @@
+Thread 4 (Thread 0x7fffe03ff640 (LWP 589691) "Novas"):
+#0  0x00007fffe7703ded in select () from /lib64/libc.so.6
+#1  0x000000001035a3a9 in NotifierThreadProc ()
+#2  0x00000000103b7fab in sdp_wrap_start_routine ()
+#3  0x00007fffe76897e2 in start_thread () from /lib64/libc.so.6
+#4  0x00007fffe770e800 in clone3 () from /lib64/libc.so.6
+Thread 3 (Thread 0x7fffe13fd640 (LWP 589568) "QXcbEventQueue"):
+#0  0x00007fffe77015bf in poll () from /lib64/libc.so.6
+#1  0x00007ffff5c68f42 in _xcb_conn_wait.part.0 () from /lib64/libxcb.so.1
+#2  0x00007ffff5c6a90c in xcb_wait_for_event () from /lib64/libxcb.so.1
+#3  0x00007ffff5cf0c00 in ?? () from /tools/synopsys/verdi/W-2024.09-SP2/platform/LINUXAMD64/lib/Qt5/lib/libQt5XcbQpa.so.5
+#4  0x00007ffff48f0b9f in ?? () from /tools/synopsys/verdi/W-2024.09-SP2/platform/LINUXAMD64/lib/Qt5/lib/libQt5Core.so.5
+#5  0x00000000103b7fab in sdp_wrap_start_routine ()
+#6  0x00007fffe76897e2 in start_thread () from /lib64/libc.so.6
+#7  0x00007fffe770e800 in clone3 () from /lib64/libc.so.6
+Thread 2 (Thread 0x7fffe1dff640 (LWP 589567) "Novas"):
+#0  0x00007fffe76d3c35 in clock_nanosleep@GLIBC_2.2.5 () from /lib64/libc.so.6
+#1  0x00007fffe76d8847 in nanosleep () from /lib64/libc.so.6
+#2  0x00007fffe76d877e in sleep () from /lib64/libc.so.6
+#3  0x000000000d525d80 in LicenseCheckUtility ()
+#4  0x00000000103b7fab in sdp_wrap_start_routine ()
+#5  0x00007fffe76897e2 in start_thread () from /lib64/libc.so.6
+#6  0x00007fffe770e800 in clone3 () from /lib64/libc.so.6
+Thread 1 (Thread 0x7fffe7c48180 (LWP 589556) "Novas"):
+#0  0x00007fffe76d85ff in wait4 () from /lib64/libc.so.6
+#1  0x00007fffe76777ca in _IO_proc_close@@GLIBC_2.2.5 () from /lib64/libc.so.6
+#2  0x00007fffe7681f30 in __GI__IO_file_close_it () from /lib64/libc.so.6
+#3  0x00007fffe7675d6f in fclose@@GLIBC_2.2.5 () from /lib64/libc.so.6
+#4  0x0000000010479af8 in _sys_pclose ()
+#5  0x0000000010459de2 in system ()
+#6  0x0000000010447a9a in sysiCrash ()
+#7  0x0000000010448102 in actUnexpectAction ()
+#8  0x000000001044816f in catchSignalCB ()
+#9  0x000000000f2346e7 in IRuXUSVDCbhMj1y ()
+#10 <signal handler called>
+#11 0x00000000095ac12c in tbvTopWin_C::EvtOnRunSpecifiedCommand(char) ()
+#12 0x0000000009588d18 in tbvSpecifySimCmdUI(_wtWindowRec*, int, char**, void*) ()
+#13 0x00000000100c9202 in cmdiMapFunc ()
+#14 0x00000000100c9296 in cmdMapFunc ()
+#15 0x000000000cf47421 in qBaseWindow_V::dispatchFuncUI(char*, int, char**, void*) ()
+#16 0x000000000cf5b5e2 in qBaseWindow_V::_invokeUI() ()
+#17 0x000000000cf60dc9 in qBaseWindow_V::qt_static_metacall(QObject*, QMetaObject::Call, int, void**) ()
+#18 0x00007ffff4afd8fc in ?? () from /tools/synopsys/verdi/W-2024.09-SP2/platform/LINUXAMD64/lib/Qt5/lib/libQt5Core.so.5
+#19 0x00007ffff418da02 in QAction::triggered(bool) () from /tools/synopsys/verdi/W-2024.09-SP2/platform/LINUXAMD64/lib/Qt5/lib/libQt5Widgets.so.5
+#20 0x00007ffff418fde8 in QAction::activate(QAction::ActionEvent) () from /tools/synopsys/verdi/W-2024.09-SP2/platform/LINUXAMD64/lib/Qt5/lib/libQt5Widgets.so.5
+#21 0x00007ffff41902f0 in ?? () from /tools/synopsys/verdi/W-2024.09-SP2/platform/LINUXAMD64/lib/Qt5/lib/libQt5Widgets.so.5
+#22 0x00007ffff4afd8fc in ?? () from /tools/synopsys/verdi/W-2024.09-SP2/platform/LINUXAMD64/lib/Qt5/lib/libQt5Core.so.5
+#23 0x00000000094e6ae4 in tbvQWCommandLineEdit::executeCommandSignal() ()
+#24 0x00000000094a3dd1 in tbvQWCommandLineEdit::slotReturnPressed() ()
+#25 0x00000000094e6b23 in tbvQWCommandLineEdit::qt_static_metacall(QObject*, QMetaObject::Call, int, void**) ()
+#26 0x00007ffff4afd8fc in ?? () from /tools/synopsys/verdi/W-2024.09-SP2/platform/LINUXAMD64/lib/Qt5/lib/libQt5Core.so.5
+#27 0x000000000d397f30 in QwCmdLineEdit::cmdlineReturnPressed() ()
+#28 0x000000000d397d77 in QwCmdLineEdit::keyPressEvent(QKeyEvent*) ()
+#29 0x00000000094b5c99 in tbvQWCommandLineEdit::keyPressEvent(QKeyEvent*) ()
+#30 0x00007ffff41d1e14 in QWidget::event(QEvent*) () from /tools/synopsys/verdi/W-2024.09-SP2/platform/LINUXAMD64/lib/Qt5/lib/libQt5Widgets.so.5
+#31 0x00007ffff427b81e in QFrame::event(QEvent*) () from /tools/synopsys/verdi/W-2024.09-SP2/platform/LINUXAMD64/lib/Qt5/lib/libQt5Widgets.so.5
+#32 0x00007ffff427e261 in QAbstractScrollArea::event(QEvent*) () from /tools/synopsys/verdi/W-2024.09-SP2/platform/LINUXAMD64/lib/Qt5/lib/libQt5Widgets.so.5
+#33 0x00007ffff434fd8d in QTextEdit::event(QEvent*) () from /tools/synopsys/verdi/W-2024.09-SP2/platform/LINUXAMD64/lib/Qt5/lib/libQt5Widgets.so.5
+#34 0x000000000d397a38 in QwCmdLineEdit::event(QEvent*) ()
+#35 0x00007ffff419370f in QApplicationPrivate::notify_helper(QObject*, QEvent*) () from /tools/synopsys/verdi/W-2024.09-SP2/platform/LINUXAMD64/lib/Qt5/lib/libQt5Widgets.so.5
+#36 0x00007ffff419c64c in QApplication::notify(QObject*, QEvent*) () from /tools/synopsys/verdi/W-2024.09-SP2/platform/LINUXAMD64/lib/Qt5/lib/libQt5Widgets.so.5
+#37 0x000000000d302dbd in QwApplication::notify(QObject*, QEvent*) ()
+#38 0x00007ffff4ac945a in QCoreApplication::notifyInternal2(QObject*, QEvent*) () from /tools/synopsys/verdi/W-2024.09-SP2/platform/LINUXAMD64/lib/Qt5/lib/libQt5Core.so.5
+#39 0x00007ffff41ee4d6 in QWidgetWindow::event(QEvent*) () from /tools/synopsys/verdi/W-2024.09-SP2/platform/LINUXAMD64/lib/Qt5/lib/libQt5Widgets.so.5
+#40 0x00007ffff419370f in QApplicationPrivate::notify_helper(QObject*, QEvent*) () from /tools/synopsys/verdi/W-2024.09-SP2/platform/LINUXAMD64/lib/Qt5/lib/libQt5Widgets.so.5
+#41 0x00007ffff419beb8 in QApplication::notify(QObject*, QEvent*) () from /tools/synopsys/verdi/W-2024.09-SP2/platform/LINUXAMD64/lib/Qt5/lib/libQt5Widgets.so.5
+#42 0x000000000d302dbd in QwApplication::notify(QObject*, QEvent*) ()
+#43 0x00007ffff4ac945a in QCoreApplication::notifyInternal2(QObject*, QEvent*) () from /tools/synopsys/verdi/W-2024.09-SP2/platform/LINUXAMD64/lib/Qt5/lib/libQt5Core.so.5
+#44 0x00007ffff5131a73 in QGuiApplicationPrivate::processKeyEvent(QWindowSystemInterfacePrivate::KeyEvent*) () from /tools/synopsys/verdi/W-2024.09-SP2/platform/LINUXAMD64/lib/Qt5/lib/libQt5Gui.so.5
+#45 0x00007ffff51368ff in QGuiApplicationPrivate::processWindowSystemEvent(QWindowSystemInterfacePrivate::WindowSystemEvent*) () from /tools/synopsys/verdi/W-2024.09-SP2/platform/LINUXAMD64/lib/Qt5/lib/libQt5Gui.so.5
+#46 0x00007ffff51102ec in QWindowSystemInterface::sendWindowSystemEvents(QFlags<QEventLoop::ProcessEventsFlag>) () from /tools/synopsys/verdi/W-2024.09-SP2/platform/LINUXAMD64/lib/Qt5/lib/libQt5Gui.so.5
+#47 0x00007ffff5cf1ce3 in ?? () from /tools/synopsys/verdi/W-2024.09-SP2/platform/LINUXAMD64/lib/Qt5/lib/libQt5XcbQpa.so.5
+#48 0x00007ffff4ac81ab in QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) () from /tools/synopsys/verdi/W-2024.09-SP2/platform/LINUXAMD64/lib/Qt5/lib/libQt5Core.so.5
+#49 0x00007ffff4acfc87 in QCoreApplication::exec() () from /tools/synopsys/verdi/W-2024.09-SP2/platform/LINUXAMD64/lib/Qt5/lib/libQt5Core.so.5
+#50 0x000000000d2f92fd in QwApplication::exec() ()
+#51 0x00000000069acda9 in FUNC_DEBMAIN_LOOP() ()
+#52 0x00000000069b6f94 in main ()
+---------------
+branchName=Verdi_W-2024.09-SP2 cnlDate=-- Mon Mar 3 20:57:34 PDT 2025 cnlEnv=Linux.0/64bit
+uname(Linux kccisynop2 5.14.0-427.13.1.el9_4.x86_64 #1 SMP PREEMPT_DYNAMIC Wed Apr 10 10:29:16 EDT 2024 x86_64)
+---------------
+Process Size: 1077747712 bytes
+verdi detected abnormal termination.
+Log information written to
+/home/aedu35/asic_edu/project1/verdiLog/sysinfo_Jul15_2004.tar.
+Please send this file to customer support.

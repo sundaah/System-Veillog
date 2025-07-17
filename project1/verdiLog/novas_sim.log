@@ -1,0 +1,32 @@
+Invoking simulator...
+
+./simv -sml=verdi +UVM_VERDI_TRACE=UVM_AWARE +fsdb+gate=off -ucli2Proc -ucli
+debImport "-i" "-simflow" "-dbdir" "./simv.daidir"
+*Verdi* Loading libsscore_vcs202409.so
+
+*Verdi* : Enable RPC Server(594841)
+
+srcTBInvokeSim
+Chronologic VCS simulator copyright 1991-2024
+Contains Synopsys proprietary information.
+Compiler version W-2024.09-SP1_Full64; Runtime version W-2024.09-SP1_Full64;  Jul 15 20:05 2025
+Verdi>config keepfuture on
+on
+Verdi>fsdbDumpvars 1 "tb_rrc_filter.clk"  +all +trace_process;fsdbDumpvars 1 "tb_rrc_filter.rstn"  +all +trace_process;fsdbDumpvars 1 "tb_rrc_filter.data_in"  +all +trace_process;fsdbDumpvars 1 "tb_rrc_filter.data_out"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (tb_rrc_filter.clk).
+*Verdi* : Dumping the signal (tb_rrc_filter.rstn).
+*Verdi* : Dumping the signal (tb_rrc_filter.data_in).
+*Verdi* : Dumping the signal (tb_rrc_filter.data_out).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>run
+$finish called from file "tb_rrc_filter.sv", line 40.
+$finish at simulation time            937005000
+Simulation complete, time is 937005000 ps.
+tb_rrc_filter.sv, 40 :            $finish;
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 937005000 ps
+CPU Time:      0.390 seconds;       Data structure size:   0.0Mb
+Tue Jul 15 20:13:30 2025
+debExit
